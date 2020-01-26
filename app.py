@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/<path:path>', methods=['GET', 'POST'])
 def all_routes(path):
     return jsonify({
+        'json': request.get_json(silent=True),
         'data': request.values,
         'query': request.args,
         'path': '/%s' % path,
