@@ -1,0 +1,9 @@
+services:
+  echo-flask:
+    build: .
+    container_name: echo-flask
+    ports:
+      - "5001:5000"
+    environment:
+      - APP_NAME=${APP_NAME:-echo-flask}
+    restart: unless-stopped
